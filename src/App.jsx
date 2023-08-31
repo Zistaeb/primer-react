@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import React from 'react';
+import {Theme} from './Theme';
 import './App.css';
 import {Form} from './Form';
 
@@ -11,14 +12,14 @@ const movies = [{
   available: 3
 }]
 
-function App() {
+function App(){
   return( 
-    <div>
+    <Theme>
       <h2> Peliculas </h2> 
-  {movies.map(movie => (
-    <Form movie = {movie}/>
+  {movies.map((movie, i) => (
+    <Form key={i} movie={movie}/>
   ))}
-    </div>
+    </Theme>
   );
 }
 
